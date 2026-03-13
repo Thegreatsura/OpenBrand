@@ -1,6 +1,6 @@
 {
   "name": "openbrand",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Extract brand assets (logos, colors, backdrops) from any website URL",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -17,6 +17,7 @@
     "src/"
   ],
   "license": "MIT",
+  "homepage": "https://openbrand.sh",
   "repository": {
     "type": "git",
     "url": "https://github.com/ethanjyx/openbrand.git"
