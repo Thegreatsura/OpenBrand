@@ -1,6 +1,10 @@
-# OpenBrand
+<p align="center">
+  <img src="public/logo.svg" alt="OpenBrand logo" width="80" height="84" />
+</p>
 
-Try it out at https://openbrand.sh
+<h1 align="center">OpenBrand</h1>
+
+<p align="center">Try it out at <a href="https://openbrand.sh">openbrand.sh</a></p>
 
 Extract brand assets (logos, colors, backdrops, brand name) from any website URL.
 

@@ -12,11 +12,14 @@ export default async function Home({
       <main className="max-w-4xl mx-auto px-6 py-16">
         <div className="mb-10 flex items-start justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-neutral-900 mb-2">
-              OpenBrand
-            </h1>
+            <div className="flex items-center gap-3 mb-2">
+              <img src="/logo.svg" alt="OpenBrand logo" width={32} height={34} />
+              <h1 className="text-3xl font-bold text-neutral-900">
+                OpenBrand
+              </h1>
+            </div>
             <p className="text-neutral-500">
-              Enter a website to extract its brand assets — logos, colors, and
+              Enter a website to extract its brand assets - logos, colors, and
               images.
             </p>
           </div>
