@@ -62,7 +62,7 @@ export function UrlForm({ initialUrl }: { initialUrl?: string }) {
           type="text"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
-          placeholder="Enter a website URL (e.g. stripe.com)"
+          placeholder="Enter a website URL (e.g. stripe.com, tight.studio)"
           className="flex-1 px-4 py-3 rounded-xl border border-neutral-300 bg-white text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent transition-shadow"
           disabled={loading}
         />
