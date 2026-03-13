@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { extractBrandAssets } from "@/src/scraper";
+import { getAuthenticatedUserId } from "@/lib/auth";
 import type { BrandExtractionResult, ExtractionResponse } from "@/src/types";
 export async function POST(request: Request) {
   try {
@@ -23,12 +24,16 @@ export async function POST(request: Request) {
       );
     }
 
-    console.log(JSON.stringify({ event: "extract_request", url, timestamp: new Date().toISOString() }));
+    const hasBearer = request.headers.get("authorization")?.startsWith("Bearer ");
+    const userId = await getAuthenticatedUserId(request);
+    const source = userId ? (hasBearer ? "api_key" : "session") : "anonymous";
+
+    console.log(JSON.stringify({ event: "extract_request", url, source, user_id: userId, timestamp: new Date().toISOString() }));
 
     const extracted = await extractBrandAssets(url);
 
     if (!extracted) {
-      console.log(JSON.stringify({ event: "extract_empty", url }));
+      console.log(JSON.stringify({ event: "extract_empty", url, source, user_id: userId }));
       return NextResponse.json(
         {
           success: false,
@@ -48,6 +53,8 @@ export async function POST(request: Request) {
     console.log(JSON.stringify({
       event: "extract_success",
       url,
+      source,
+      user_id: userId,
       brandName: result.brandName,
       logoCount: result.logos.length,
       colorCount: result.colors.length,
