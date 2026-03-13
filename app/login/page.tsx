@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
+import { Footer } from "@/components/footer";
 
 export default function LoginPage() {
   const [loading, setLoading] = useState(false);
@@ -58,6 +59,7 @@ export default function LoginPage() {
           </div>
         )}
       </div>
+      <Footer className="absolute bottom-0 left-0 right-0" />
     </div>
   );
 }

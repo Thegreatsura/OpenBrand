@@ -2,6 +2,7 @@ import { UrlForm } from "@/components/url-form";
 import { createClient } from "@/lib/supabase/server";
 import { SignOutButton } from "@/components/sign-out-button";
 import { GetStartedTabs } from "@/components/get-started-tabs";
+import { Footer } from "@/components/footer";
 
 export default async function Home({
   searchParams,
@@ -60,18 +61,7 @@ export default async function Home({
 
         <GetStartedTabs isLoggedIn={!!user} />
       </main>
-      <footer className="max-w-4xl mx-auto px-6 pb-10 text-center text-sm text-neutral-400">
-        OpenBrand is designed, built, and backed by{" "}
-        <a
-          href="http://tight.software/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline hover:text-neutral-600 transition-colors"
-        >
-          Tight Software LLC
-        </a>
-        .
-      </footer>
+      <Footer className="max-w-4xl mx-auto" />
     </div>
   );
 }
