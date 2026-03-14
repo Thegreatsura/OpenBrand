@@ -4,16 +4,6 @@ import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { Footer } from "@/components/footer";
 
-const getURL = () => {
-  let url =
-    process?.env?.NEXT_PUBLIC_SITE_URL ??
-    process?.env?.NEXT_PUBLIC_VERCEL_URL ??
-    "http://localhost:3000/";
-  url = url.startsWith("http") ? url : `https://${url}`;
-  url = url.endsWith("/") ? url : `${url}/`;
-  return url;
-};
-
 export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -26,7 +16,7 @@ export default function LoginPage() {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
-        redirectTo: `${getURL()}auth/callback`,
+        redirectTo: `${window.location.origin}/auth/callback`,
       },
     });
 
