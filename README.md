@@ -11,6 +11,8 @@
   <img src="public/openbrand.gif" alt="OpenBrand demo" width="600" />
 </p>
 
+<p align="center"><sub>Demo prepared with <a href="https://tight.studio/">Tight Studio</a></sub></p>
+
 Extract brand assets (logos, colors, backdrops, brand name) from any website URL.
 
 ## As an API call
